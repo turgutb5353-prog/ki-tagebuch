@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { supabase } from "../../lib/supabase";
 import { useRouter } from "next/navigation";
 import { useThemeColors } from "../../lib/useThemeColors";
+import SkeletonPage from "../../components/SkeletonPage";
 
 type Message = {
   role: "user" | "assistant";
@@ -131,7 +132,7 @@ export default function Chat() {
     setShowMoodPicker(true);
   };
 
-  if (!colors.mounted) return null;
+  if (!colors.mounted) return <SkeletonPage variant="chat" titleWidth="55px" rightButton />;
 
   return (
     <main

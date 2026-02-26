@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import SkeletonPage from "../../components/SkeletonPage";
 
 export default function Einstellungen() {
   const [reminderSet, setReminderSet] = useState(false);
@@ -54,7 +55,7 @@ export default function Einstellungen() {
     }
   };
 
-  if (!mounted) return null;
+  if (!mounted) return <SkeletonPage variant="settings" titleWidth="90px" />;
 
   const bgColor = darkMode ? "#2c2817" : "#faf8f3";
   const textColor = darkMode ? "#faf8f3" : "#2c2817";

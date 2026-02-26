@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { supabase } from "../../lib/supabase";
 import { useRouter } from "next/navigation";
 import { useThemeColors } from "../../lib/useThemeColors";
+import SkeletonPage from "../../components/SkeletonPage";
 
 const MOODS = [
   { emoji: "😔", value: 1, label: "Schlecht" },
@@ -49,7 +50,7 @@ export default function Stimmung() {
 
   const avg = getAverage();
 
-  if (!colors.mounted) return null;
+  if (!colors.mounted) return <SkeletonPage variant="content" titleWidth="75px" />;
 
   return (
     <main

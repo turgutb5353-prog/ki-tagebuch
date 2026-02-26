@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useThemeColors } from "../../lib/useThemeColors";
+import SkeletonPage from "../../components/SkeletonPage";
 
 const SESSIONS = [
   {
@@ -64,7 +65,7 @@ export default function Sessions() {
   const colors = useThemeColors();
   const router = useRouter();
 
-  if (!colors.mounted) return null;
+  if (!colors.mounted) return <SkeletonPage variant="list" titleWidth="70px" />;
 
   return (
     <main

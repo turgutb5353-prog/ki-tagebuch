@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { supabase } from "../../lib/supabase";
 import { useRouter } from "next/navigation";
 import { useThemeColors } from "../../lib/useThemeColors";
+import SkeletonPage from "../../components/SkeletonPage";
 
 export default function Woche() {
   const colors = useThemeColors();
@@ -71,7 +72,7 @@ export default function Woche() {
     });
   };
 
-  if (!colors.mounted) return null;
+  if (!colors.mounted) return <SkeletonPage variant="content" titleWidth="120px" />;
 
   return (
     <main

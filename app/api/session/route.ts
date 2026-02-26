@@ -31,7 +31,9 @@ export async function POST(req: NextRequest) {
       messages: [
         {
           role: "system",
-          content: systemPrompt + " Halte deine Antworten kurz – maximal 3-4 Sätze. Stelle immer nur eine Frage.",
+          content:
+            systemPrompt +
+            " Halte deine Antworten kurz – maximal 3-4 Sätze. Stelle immer nur eine Frage.",
         },
         ...(messages.length === 0
           ? [{ role: "user" as const, content: "Starte die Session." }]

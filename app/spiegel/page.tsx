@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { supabase } from "../../lib/supabase";
 import { useRouter } from "next/navigation";
 import { useThemeColors } from "../../lib/useThemeColors";
+import SkeletonPage from "../../components/SkeletonPage";
 
 export default function Spiegel() {
   const colors = useThemeColors();
@@ -62,7 +63,7 @@ export default function Spiegel() {
     setLoading(false);
   };
 
-  if (!colors.mounted) return null;
+  if (!colors.mounted) return <SkeletonPage variant="content" titleWidth="90px" />;
 
   return (
     <main

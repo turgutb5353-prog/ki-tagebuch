@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { supabase } from "../../../lib/supabase";
 import { useRouter, useParams } from "next/navigation";
 import { useThemeColors } from "../../../lib/useThemeColors";
+import SkeletonPage from "../../../components/SkeletonPage";
 
 type Message = {
   role: "user" | "assistant";
@@ -140,7 +141,8 @@ export default function SessionChat() {
     setLoading(false);
   };
 
-  if (!session || !colors.mounted) return null;
+  if (!colors.mounted) return <SkeletonPage variant="chat" titleWidth="90px" />;
+  if (!session) return null;
 
   return (
     <main
