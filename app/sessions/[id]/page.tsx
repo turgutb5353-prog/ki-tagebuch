@@ -186,7 +186,7 @@ export default function SessionChat() {
             </div>
           ) : (
             <>
-              {messages.map((msg, i) => (
+              {/* {messages.map((msg, i) => (*** */}
                 <div
                   key={i}
                   className={`flex ${
