@@ -7,7 +7,7 @@ function makeSVG(size) {
     `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}">
   <rect width="${size}" height="${size}" rx="${r}" fill="#8b7355"/>
   <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-size="${fs}" font-family="Arial">📔</text>
-</svg>`
+</svg>`,
   );
 }
 

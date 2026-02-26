@@ -144,6 +144,7 @@ export default function SessionChat() {
           style={{ borderBottom: `1px solid ${colors.border}` }}
         >
           <button
+            type="button"
             onClick={() => router.push("/sessions")}
             className="transition text-sm"
             style={{ color: colors.accent }}
@@ -177,6 +178,7 @@ export default function SessionChat() {
                 </p>
               </div>
               <button
+                type="button"
                 onClick={startSession}
                 className="w-full rounded-2xl py-4 font-semibold transition-all"
                 style={{ background: session.color, color: colors.bg }}
@@ -186,7 +188,7 @@ export default function SessionChat() {
             </div>
           ) : (
             <>
-              {/* {messages.map((msg, i) => (*** */}
+              {messages.map((msg, i) => (
                 <div
                   key={i}
                   className={`flex ${
@@ -278,6 +280,7 @@ export default function SessionChat() {
                 }}
               />
               <button
+                type="button"
                 onClick={sendMessage}
                 disabled={loading || !input.trim()}
                 className="rounded-xl px-4 py-2 font-medium transition-all disabled:opacity-40 mb-1"
