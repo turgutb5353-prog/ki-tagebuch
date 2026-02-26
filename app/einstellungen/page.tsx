@@ -32,7 +32,7 @@ export default function Einstellungen() {
       if (now > target) target.setDate(target.getDate() + 1);
       const delay = target.getTime() - now.getTime();
       setTimeout(() => {
-        new Notification("Ki-Tagebuch 🌙", {
+        new Notification("Spura 🌙", {
           body: "Wie war dein Tag? Schreib kurz rein.",
           icon: "/favicon.ico",
         });
@@ -201,7 +201,7 @@ export default function Einstellungen() {
               📔
             </div>
             <div>
-              <p className="font-semibold">Ki-Tagebuch</p>
+              <p className="font-semibold">Spura</p>
               <p
                 className="text-xs"
                 style={{ color: darkMode ? "#a4886f" : "#a4886f" }}

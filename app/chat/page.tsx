@@ -147,7 +147,7 @@ export default function Chat() {
         >
           ← Zurück
         </button>
-        <h1 className="font-bold">Tagebuch</h1>
+        <h1 className="font-bold">Spura</h1>
         <button
           onClick={newChat}
           className="text-xs transition px-3 py-1 rounded-full"

@@ -85,7 +85,7 @@ export default function Home() {
         <div className="w-full max-w-sm">
           <div className="text-center mb-8">
             <div className="text-5xl mb-3">📔</div>
-            <h1 className="text-3xl font-bold mb-1">Ki-Tagebuch</h1>
+            <h1 className="text-3xl font-bold mb-1">Spura</h1>
             <p style={{ color: colors.accentLight }} className="text-sm">
               Dein persönliches Tagebuch
             </p>
@@ -166,7 +166,7 @@ export default function Home() {
   const menuItems = [
     {
       icon: "💬",
-      title: "Tagebuch",
+      title: "Spura",
       description: "Schreib über deinen Tag",
       href: "/chat",
       gradient: "linear-gradient(135deg, #667eea, #764ba2)",
@@ -222,7 +222,7 @@ export default function Home() {
           <p className="text-sm mb-1" style={{ color: colors.accentLight }}>
             {getTimeGreeting()}
           </p>
-          <h1 className="text-3xl font-bold">Ki-Tagebuch 📔</h1>
+          <h1 className="text-3xl font-bold">Spura 📔</h1>
           <p className="text-sm mt-1" style={{ color: colors.accentLight }}>
             {user.email}
           </p>
