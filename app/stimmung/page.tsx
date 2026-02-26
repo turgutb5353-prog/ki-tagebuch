@@ -5,6 +5,7 @@ import { supabase } from "../../lib/supabase";
 import { useRouter } from "next/navigation";
 import { useThemeColors } from "../../lib/useThemeColors";
 import SkeletonPage from "../../components/SkeletonPage";
+import BottomNav from "../../components/BottomNav";
 
 const MOODS = [
   { emoji: "😔", value: 1, label: "Schlecht" },
@@ -50,7 +51,8 @@ export default function Stimmung() {
 
   const avg = getAverage();
 
-  if (!colors.mounted) return <SkeletonPage variant="content" titleWidth="75px" />;
+  if (!colors.mounted)
+    return <SkeletonPage variant="content" titleWidth="75px" />;
 
   return (
     <main
@@ -76,7 +78,7 @@ export default function Stimmung() {
         <div className="w-16" />
       </div>
 
-      <div className="flex-1 px-6 py-8 max-w-2xl w-full mx-auto flex flex-col gap-6">
+      <div className="flex-1 px-6 py-8 pb-24 max-w-2xl w-full mx-auto flex flex-col gap-6">
         {/* Durchschnitt */}
         {avg && (
           <div
@@ -157,7 +159,6 @@ export default function Stimmung() {
             </div>
           )}
         </div>
-      </div>
-    </main>
+      </div>      <BottomNav bg={colors.bg} border={colors.border} accent={colors.accent} accentLight={colors.accentLight} text={colors.text} />    </main>
   );
 }

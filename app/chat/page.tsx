@@ -5,6 +5,7 @@ import { supabase } from "../../lib/supabase";
 import { useRouter } from "next/navigation";
 import { useThemeColors } from "../../lib/useThemeColors";
 import SkeletonPage from "../../components/SkeletonPage";
+import BottomNav from "../../components/BottomNav";
 
 type Message = {
   role: "user" | "assistant";
@@ -132,7 +133,8 @@ export default function Chat() {
     setShowMoodPicker(true);
   };
 
-  if (!colors.mounted) return <SkeletonPage variant="chat" titleWidth="55px" rightButton />;
+  if (!colors.mounted)
+    return <SkeletonPage variant="chat" titleWidth="55px" rightButton />;
 
   return (
     <main
@@ -170,7 +172,7 @@ export default function Chat() {
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto px-4 py-6 flex flex-col gap-4 max-w-2xl w-full mx-auto">
+      <div className="flex-1 overflow-y-auto px-4 py-6 pb-24 flex flex-col gap-4 max-w-2xl w-full mx-auto">
         {messages.length === 0 && (
           <div className="flex flex-col items-center mt-16 gap-6">
             <div className="text-center">
@@ -300,7 +302,7 @@ export default function Chat() {
       </div>
 
       {/* Input */}
-      <div className="px-4 pb-6 max-w-2xl w-full mx-auto">
+      <div className="px-4 pb-24 max-w-2xl w-full mx-auto">
         <div
           className="flex gap-2 items-end rounded-2xl p-2"
           style={{
@@ -344,6 +346,7 @@ export default function Chat() {
           Enter zum Senden · Shift+Enter für neue Zeile
         </p>
       </div>
+      <BottomNav bg={colors.bg} border={colors.border} accent={colors.accent} accentLight={colors.accentLight} text={colors.text} />
     </main>
   );
 }

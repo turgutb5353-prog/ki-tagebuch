@@ -5,6 +5,7 @@ import { supabase } from "../../lib/supabase";
 import { useRouter } from "next/navigation";
 import { useThemeColors } from "../../lib/useThemeColors";
 import SkeletonPage from "../../components/SkeletonPage";
+import BottomNav from "../../components/BottomNav";
 
 export default function Spiegel() {
   const colors = useThemeColors();
@@ -63,7 +64,8 @@ export default function Spiegel() {
     setLoading(false);
   };
 
-  if (!colors.mounted) return <SkeletonPage variant="content" titleWidth="90px" />;
+  if (!colors.mounted)
+    return <SkeletonPage variant="content" titleWidth="90px" />;
 
   return (
     <main
@@ -89,7 +91,7 @@ export default function Spiegel() {
         <div className="w-16" />
       </div>
 
-      <div className="flex-1 px-6 py-8 max-w-2xl w-full mx-auto flex flex-col gap-6">
+      <div className="flex-1 px-6 py-8 pb-24 max-w-2xl w-full mx-auto flex flex-col gap-6">
         {!analysis && !loading && (
           <>
             {entryCount < 5 ? (
@@ -253,6 +255,7 @@ export default function Spiegel() {
           </div>
         )}
       </div>
+      <BottomNav bg={colors.bg} border={colors.border} accent={colors.accent} accentLight={colors.accentLight} text={colors.text} />
     </main>
   );
 }

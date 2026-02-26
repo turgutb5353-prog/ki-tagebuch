@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useThemeColors } from "../../lib/useThemeColors";
 import SkeletonPage from "../../components/SkeletonPage";
+import BottomNav from "../../components/BottomNav";
 
 const SESSIONS = [
   {
@@ -75,7 +76,7 @@ export default function Sessions() {
         color: colors.text,
       }}
     >
-      <div className="w-full max-w-md flex flex-col min-h-screen px-6 pb-6">
+      <div className="w-full max-w-md flex flex-col min-h-screen px-6 pb-24">
         <div
           className="flex items-center py-4 mb-2"
           style={{ borderBottom: `1px solid ${colors.border}` }}
@@ -126,6 +127,7 @@ export default function Sessions() {
           ))}
         </div>
       </div>
+      <BottomNav bg={colors.bg} border={colors.border} accent={colors.accent} accentLight={colors.accentLight} text={colors.text} />
     </main>
   );
 }

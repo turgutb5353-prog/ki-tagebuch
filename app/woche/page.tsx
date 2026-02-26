@@ -5,6 +5,7 @@ import { supabase } from "../../lib/supabase";
 import { useRouter } from "next/navigation";
 import { useThemeColors } from "../../lib/useThemeColors";
 import SkeletonPage from "../../components/SkeletonPage";
+import BottomNav from "../../components/BottomNav";
 
 export default function Woche() {
   const colors = useThemeColors();
@@ -72,7 +73,8 @@ export default function Woche() {
     });
   };
 
-  if (!colors.mounted) return <SkeletonPage variant="content" titleWidth="120px" />;
+  if (!colors.mounted)
+    return <SkeletonPage variant="content" titleWidth="120px" />;
 
   return (
     <main
@@ -99,7 +101,7 @@ export default function Woche() {
         <div className="w-16" />
       </div>
 
-      <div className="flex-1 px-6 py-8 max-w-2xl w-full mx-auto">
+      <div className="flex-1 px-6 py-8 pb-24 max-w-2xl w-full mx-auto">
         {/* Date */}
         <p
           className="text-sm mb-6 text-center"
@@ -154,6 +156,7 @@ export default function Woche() {
           )}
         </div>
       </div>
+      <BottomNav bg={colors.bg} border={colors.border} accent={colors.accent} accentLight={colors.accentLight} text={colors.text} />
     </main>
   );
 }
