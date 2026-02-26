@@ -71,6 +71,7 @@ export default function Spiegel() {
         style={{ borderBottom: `1px solid ${colors.border}` }}
       >
         <button
+          type="button"
           onClick={() => router.push("/")}
           className="transition text-sm"
           style={{ color: colors.accent }}
@@ -140,6 +141,7 @@ export default function Spiegel() {
                   zeigen was ich erkenne.
                 </p>
                 <button
+                  type="button"
                   onClick={generateProfile}
                   className="w-full rounded-2xl py-4 font-semibold text-lg transition-all hover:opacity-90"
                   style={{
@@ -234,6 +236,7 @@ export default function Spiegel() {
             ))}
 
             <button
+              type="button"
               onClick={() => setAnalysis(null)}
               className="text-xs text-center transition py-2"
               style={{ color: colors.accent }}

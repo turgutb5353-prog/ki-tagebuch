@@ -233,6 +233,7 @@ export default function Home() {
           {menuItems.slice(0, 4).map((item) => (
             <button
               key={item.href}
+              type="button"
               onClick={() => router.push(item.href)}
               className="rounded-3xl p-5 text-left transition-all hover:scale-105 active:scale-95"
               style={{
@@ -256,6 +257,7 @@ export default function Home() {
         {menuItems.slice(4).map((item) => (
           <button
             key={item.href}
+            type="button"
             onClick={() => router.push(item.href)}
             className="rounded-3xl p-5 text-left transition-all hover:scale-105 active:scale-95 w-full"
             style={{
@@ -319,6 +321,7 @@ export default function Home() {
                 ].map((mood) => (
                   <button
                     key={mood.value}
+                    type="button"
                     onClick={() => saveMood(mood.value)}
                     className="text-3xl transition-all hover:scale-125 active:scale-95"
                   >
@@ -332,6 +335,7 @@ export default function Home() {
         {/* Logout */}
         <div className="px-6 py-8 text-center">
           <button
+            type="button"
             onClick={handleLogout}
             className="text-xs transition"
             style={{ color: colors.accentLight }}

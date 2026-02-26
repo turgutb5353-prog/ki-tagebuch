@@ -141,6 +141,7 @@ export default function Chat() {
         style={{ borderBottom: `1px solid ${colors.border}` }}
       >
         <button
+          type="button"
           onClick={() => router.push("/")}
           className="transition text-sm"
           style={{ color: colors.accent }}
@@ -149,6 +150,7 @@ export default function Chat() {
         </button>
         <h1 className="font-bold">Spura</h1>
         <button
+          type="button"
           onClick={newChat}
           className="text-xs transition px-3 py-1 rounded-full"
           style={{
@@ -176,6 +178,7 @@ export default function Chat() {
               </p>
             </div>
             <button
+              type="button"
               onClick={() => setInput(getDailyQuestion())}
               className="text-sm transition px-5 py-2 rounded-full"
               style={{
@@ -258,6 +261,7 @@ export default function Chat() {
               {MOODS.map((mood) => (
                 <button
                   key={mood.value}
+                  type="button"
                   onClick={() => saveMood(mood.value)}
                   className="flex flex-col items-center gap-1 p-3 rounded-2xl transition-all hover:scale-110"
                   style={{
@@ -314,6 +318,7 @@ export default function Chat() {
             }}
           />
           <button
+            type="button"
             onClick={sendMessage}
             disabled={loading || !input.trim()}
             className="rounded-xl px-4 py-2 font-medium transition-all disabled:opacity-40 mb-1"

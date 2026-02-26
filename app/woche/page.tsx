@@ -81,6 +81,7 @@ export default function Woche() {
         style={{ borderBottom: `1px solid ${colors.border}` }}
       >
         <button
+          type="button"
           onClick={() => router.push("/")}
           className="transition text-sm"
           style={{ color: colors.accent }}

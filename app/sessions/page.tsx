@@ -80,6 +80,7 @@ export default function Sessions() {
           style={{ borderBottom: `1px solid ${colors.border}` }}
         >
           <button
+            type="button"
             onClick={() => router.push("/")}
             className="transition text-sm"
             style={{ color: colors.accent }}
@@ -99,6 +100,7 @@ export default function Sessions() {
           {SESSIONS.map((session) => (
             <button
               key={session.id}
+              type="button"
               onClick={() => router.push(`/sessions/${session.id}`)}
               className="rounded-3xl p-5 text-left transition-all hover:scale-105 active:scale-95"
               style={{
