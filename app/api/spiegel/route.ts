@@ -1,10 +1,23 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest, NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
 
 const client = new Anthropic();
 
 export async function POST(req: NextRequest) {
   try {
+    // Auth-Prüfung
+    const authHeader = req.headers.get("authorization");
+    const token = authHeader?.replace("Bearer ", "");
+    if (!token) return NextResponse.json({ error: "Nicht autorisiert" }, { status: 401 });
+
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    );
+    const { data: { user }, error } = await supabase.auth.getUser(token);
+    if (error || !user) return NextResponse.json({ error: "Nicht autorisiert" }, { status: 401 });
+
     const { entries } = await req.json();
 
     const text = entries.map((e: any) => e.content).join("\n---\n");

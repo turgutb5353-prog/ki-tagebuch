@@ -105,9 +105,13 @@ export default function Chat() {
     setShowMoodPicker(false);
     await saveMessage(user.id, "user", input);
 
+    const { data: { session: authSession } } = await supabase.auth.getSession();
     const res = await fetch("/api/chat", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${authSession?.access_token}`,
+      },
       body: JSON.stringify({
         messages: newMessages,
         context:

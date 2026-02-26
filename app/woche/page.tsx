@@ -46,9 +46,13 @@ export default function Woche() {
     const userEntries = data.filter((e) => e.role === "user");
     setEntryCount(userEntries.length);
 
+    const { data: { session: authSession } } = await supabase.auth.getSession();
     const res = await fetch("/api/woche", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${authSession?.access_token}`,
+      },
       body: JSON.stringify({ entries: data }),
     });
 
