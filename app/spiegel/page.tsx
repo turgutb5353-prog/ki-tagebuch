@@ -45,12 +45,14 @@ export default function Spiegel() {
       .eq("role", "user")
       .order("created_at", { ascending: true });
 
-    const { data: { session: authSession } } = await supabase.auth.getSession();
+    const {
+      data: { session: authSession },
+    } = await supabase.auth.getSession();
     const res = await fetch("/api/spiegel", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${authSession?.access_token}`,
+        Authorization: `Bearer ${authSession?.access_token}`,
       },
       body: JSON.stringify({ entries: data }),
     });
