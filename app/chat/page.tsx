@@ -117,7 +117,7 @@ export default function Chat() {
         Authorization: `Bearer ${authSession?.access_token}`,
       },
       body: JSON.stringify({
-        messages: newMessages,
+        entries: newMessages,
         context:
           "Du bist ein einfühlsamer Tagebuch-Assistent. Antworte kurz, warmherzig und ermutigend.",
       }),
