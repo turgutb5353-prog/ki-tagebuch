@@ -69,15 +69,15 @@ export default function Einstellungen() {
 
   return (
     <main
-      className="h-[100dvh] flex flex-col overflow-hidden"
+      className="min-h-screen flex flex-col"
       style={{
         background: bgColor,
         color: textColor,
       }}
     >
       <div
-        className="flex justify-between items-center px-6 py-4"
-        style={{ borderBottom: `1px solid ${borderColor}` }}
+        className="sticky top-0 z-10 flex justify-between items-center px-6 py-4"
+        style={{ borderBottom: `1px solid ${borderColor}`, background: bgColor }}
       >
         <button
           type="button"
@@ -91,7 +91,7 @@ export default function Einstellungen() {
         <div className="w-16" />
       </div>
 
-      <div className="flex-1 min-h-0 overflow-y-auto px-6 py-8 max-w-2xl w-full mx-auto flex flex-col gap-4">
+      <div className="flex-1 px-6 py-8 max-w-2xl w-full mx-auto flex flex-col gap-4">
         {/* Theme Toggle */}
         <div
           className="rounded-3xl p-6"

@@ -70,16 +70,16 @@ export default function Sessions() {
 
   return (
     <main
-      className="h-[100dvh] flex flex-col items-center overflow-hidden"
+      className="min-h-screen flex flex-col items-center"
       style={{
         background: colors.bg,
         color: colors.text,
       }}
     >
-      <div className="w-full max-w-md flex flex-col h-full min-h-0 overflow-y-auto px-6 pb-24">
+      <div className="w-full max-w-md flex flex-col px-6 pb-24">
         <div
-          className="flex items-center py-4 mb-2"
-          style={{ borderBottom: `1px solid ${colors.border}` }}
+          className="sticky top-0 z-10 flex items-center py-4 mb-2"
+          style={{ borderBottom: `1px solid ${colors.border}`, background: colors.bg }}
         >
           <button
             type="button"

@@ -146,8 +146,8 @@ export default function Chat() {
     >
       {/* Header */}
       <div
-        className="flex justify-between items-center px-6 py-4"
-        style={{ borderBottom: `1px solid ${colors.border}` }}
+        className="sticky top-0 z-10 flex justify-between items-center px-6 py-4"
+        style={{ borderBottom: `1px solid ${colors.border}`, background: colors.bg }}
       >
         <button
           type="button"

@@ -78,7 +78,7 @@ export default function Woche() {
 
   return (
     <main
-      className="h-[100dvh] flex flex-col overflow-hidden"
+      className="min-h-screen flex flex-col"
       style={{
         background: colors.bg,
         color: colors.text,
@@ -86,8 +86,8 @@ export default function Woche() {
     >
       {/* Header */}
       <div
-        className="flex justify-between items-center px-6 py-4"
-        style={{ borderBottom: `1px solid ${colors.border}` }}
+        className="sticky top-0 z-10 flex justify-between items-center px-6 py-4"
+        style={{ borderBottom: `1px solid ${colors.border}`, background: colors.bg }}
       >
         <button
           type="button"
@@ -101,7 +101,7 @@ export default function Woche() {
         <div className="w-16" />
       </div>
 
-      <div className="flex-1 min-h-0 overflow-y-auto px-6 py-8 pb-24 max-w-2xl w-full mx-auto">
+      <div className="flex-1 px-6 py-8 pb-24 max-w-2xl w-full mx-auto">
         {/* Date */}
         <p
           className="text-sm mb-6 text-center"
