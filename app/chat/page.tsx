@@ -138,7 +138,7 @@ export default function Chat() {
 
   return (
     <main
-      className="min-h-screen flex flex-col"
+      className="h-[100dvh] flex flex-col overflow-hidden"
       style={{
         background: colors.bg,
         color: colors.text,
@@ -172,7 +172,7 @@ export default function Chat() {
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto px-4 py-6 pb-24 flex flex-col gap-4 max-w-2xl w-full mx-auto">
+      <div className="flex-1 min-h-0 overflow-y-auto px-4 py-6 pb-24 flex flex-col gap-4 max-w-2xl w-full mx-auto">
         {messages.length === 0 && (
           <div className="flex flex-col items-center mt-16 gap-6">
             <div className="text-center">
