@@ -138,7 +138,7 @@ export default function Chat() {
 
   return (
     <main
-      className="min-h-screen flex flex-col"
+      className="h-[100dvh] flex flex-col overflow-hidden"
       style={{
         background: colors.bg,
         color: colors.text,
