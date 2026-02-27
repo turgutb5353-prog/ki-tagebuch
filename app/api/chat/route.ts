@@ -24,6 +24,9 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Nicht autorisiert" }, { status: 401 });
 
     const { entries } = await req.json();
+    const validEntries = (entries ?? []).filter(
+      (e: { role: string; content: string }) => e.content?.trim(),
+    );
 
     const completion = await groq.chat.completions.create({
       model: "llama-3.3-70b-versatile",
@@ -31,11 +34,11 @@ export async function POST(req: NextRequest) {
       messages: [
         {
           role: "system",
-          content: `Du bist ein einfühlsamer, persönlicher Tagebuch-Begleiter. 
+          content: `Du bist ein einfühlsamer, persönlicher Tagebuch-Begleiter.
       Deine Aufgabe ist es, dem Nutzer zuzuhören, tiefere Fragen zu stellen und sanft Muster in seinen Gedanken und Gefühlen zu reflektieren.
       Antworte immer auf Deutsch. Sei warm, nicht therapeutisch. Maximal 3-4 Sätze.`,
         },
-        ...entries,
+        ...validEntries,
       ],
     });
 
