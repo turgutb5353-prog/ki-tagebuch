@@ -210,13 +210,13 @@ export default function Home() {
 
   return (
     <main
-      className="min-h-screen flex flex-col items-center"
+      className="h-[100dvh] flex flex-col items-center overflow-hidden"
       style={{
         background: colors.bg,
         color: colors.text,
       }}
     >
-      <div className="w-full max-w-md flex flex-col flex-1 gap-4 px-6 pb-6">
+      <div className="w-full max-w-md flex flex-col flex-1 min-h-0 overflow-y-auto gap-4 px-6 pb-6">
         {/* Header */}
         <div className="px-6 pt-12 pb-6">
           <p className="text-sm mb-1" style={{ color: colors.accentLight }}>

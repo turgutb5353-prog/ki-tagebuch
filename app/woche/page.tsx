@@ -78,7 +78,7 @@ export default function Woche() {
 
   return (
     <main
-      className="min-h-screen flex flex-col"
+      className="h-[100dvh] flex flex-col overflow-hidden"
       style={{
         background: colors.bg,
         color: colors.text,
@@ -101,7 +101,7 @@ export default function Woche() {
         <div className="w-16" />
       </div>
 
-      <div className="flex-1 px-6 py-8 pb-24 max-w-2xl w-full mx-auto">
+      <div className="flex-1 min-h-0 overflow-y-auto px-6 py-8 pb-24 max-w-2xl w-full mx-auto">
         {/* Date */}
         <p
           className="text-sm mb-6 text-center"
