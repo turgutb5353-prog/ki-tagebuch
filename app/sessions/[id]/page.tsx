@@ -72,6 +72,16 @@ export default function SessionChat() {
   const sessionId = params.id as string;
   const session = SESSIONS[sessionId];
 
+  // Lock body scroll while on session chat page
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    document.body.style.overscrollBehavior = "none";
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.overscrollBehavior = "";
+    };
+  }, []);
+
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => {
       if (!data.user) {
