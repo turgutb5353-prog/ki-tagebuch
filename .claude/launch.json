@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Next.js Dev",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "C:\\Users\\TBaya\\AppData\\Roaming\\npm\\vercel.cmd", "dev", "--yes"],
+      "port": 3000
+    }
+  ]
+}

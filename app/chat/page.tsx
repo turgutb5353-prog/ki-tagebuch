@@ -44,6 +44,16 @@ export default function Chat() {
   const bottomRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
+  // Lock body scroll while on chat page
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    document.body.style.overscrollBehavior = "none";
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.overscrollBehavior = "";
+    };
+  }, []);
+
   // Load entries on mount
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => {
