@@ -26,10 +26,12 @@ export default function BottomNav({ bg, border, accent, accentLight, text }: Pro
   return (
     <nav
       style={{
-        background: bg,
-        borderTop: `1px solid ${border}`,
+        background:
+          bg === "#2c2817"
+            ? "rgba(44, 40, 23, 0.55)"
+            : "rgba(250, 248, 243, 0.6)",
       }}
-      className="fixed bottom-0 left-0 right-0 flex justify-around items-end pb-safe z-50"
+      className="fixed bottom-4 left-3 right-3 flex justify-around items-center pt-1 pb-0 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.18)] backdrop-blur-md z-50"
     >
       {TABS.map((tab) => {
         const isActive =
@@ -39,7 +41,7 @@ export default function BottomNav({ bg, border, accent, accentLight, text }: Pro
             key={tab.href}
             type="button"
             onClick={() => router.push(tab.href)}
-            className="flex flex-col items-center gap-0.5 px-3 py-2 transition-all active:scale-90"
+            className="flex flex-col items-center gap-0.5 px-3 py-1 rounded-xl transition-all duration-150 ease-out active:scale-95 active:opacity-75"
             style={{
               color: isActive ? accent : accentLight,
               fontWeight: isActive ? 700 : 400,
