@@ -146,7 +146,7 @@ export default function SessionChat() {
 
   return (
     <main
-      className="h-[100dvh] flex flex-col items-center overflow-hidden"
+      className="fixed inset-0 flex flex-col items-center overflow-hidden"
       style={{
         background: colors.bg,
         color: colors.text,
